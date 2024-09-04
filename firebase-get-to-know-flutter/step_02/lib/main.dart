@@ -12,17 +12,14 @@ import 'app_state.dart';                                 // new
 import 'home_page.dart';
 
 void main() {
-  // Modify from here...
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(ChangeNotifierProvider(
     create: (context) => ApplicationState(),
     builder: ((context, child) => const App()),
   ));
-  // ...to here.
 }
 
-// Add GoRouter configuration outside the App class
 final _router = GoRouter(
   routes: [
     GoRoute(
@@ -97,9 +94,7 @@ final _router = GoRouter(
     ),
   ],
 );
-// end of GoRouter configuration
 
-// Change MaterialApp to MaterialApp.router and add the routerConfig
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -118,7 +113,7 @@ class App extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      routerConfig: _router, // new
+      routerConfig: _router,
     );
   }
 }
